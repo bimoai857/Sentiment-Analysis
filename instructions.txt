@@ -1,0 +1,40 @@
+APPROACH:
+
+--Imports:
+The necessary modules and packages are imported at the beginning of the code, including requests, BeautifulSoup from bs4, os, re, pandas as pd, and TweetTokenizer from nltk.tokenize.
+
+--Reading Input Data:
+The code reads input data from an Excel file named "Input.xlsx" using openpyxl. It extracts URLs along with their corresponding IDs from the file.
+
+--Stopwords Extraction:
+Stopwords are extracted from multiple text files located in a specified directory. The stopwords are collected into a list after being processed to lowercase.
+
+--Text Preprocessing:
+The Preprocessing function takes a URL, fetches the content using requests and parses it using BeautifulSoup. It extracts text from paragraphs and list items, 
+tokenizes sentences using nltk.tokenize.TweetTokenizer, removes stopwords, and returns various metrics like word count, sentence count, etc.
+
+--Positive and Negative Words Extraction:
+The PositiveNegativeWords function reads positive and negative words from separate text files and returns them as lists.
+
+--Metrics Calculation:
+The Metrics function calculates various metrics such as positive score, negative score, polarity score, subjective score, etc., based on input words, positive words, 
+negative words, sentence count, word count, etc.
+
+--Excel Generation:
+The Generate_excel function generates an Excel file named "Output.xlsx" containing the calculated metrics for each URL.
+
+--Iterating Over URLs:
+The main script iterates over each URL extracted from the input Excel file, preprocesses the text, calculates metrics, and stores them for Excel generation.
+
+--Handling Errors:
+If the preprocessing function fails to extract content for a URL (possibly due to missing or inaccessible content), it inserts "NULL" values for metrics in the output Excel.
+
+--Output Generation:
+Finally, the script generates an Excel file with all the calculated metrics for each URL.
+
+RUNNING sentiment.py
+
+-Install python
+-Install packages like requests,bs4,pandas, openpyxl and nltk.
+-Open this folder in a text editor and in the terminal run 'python sentiment_analysis.py'
+-Output.xlsx is thus generated
